@@ -1,0 +1,5 @@
+FROM postgres:latest
+ENV POSTGRES_DB=url_shortener
+ENV POSTGRES_USER=mercado
+ENV POSTGRES_PASSWORD=libre
+EXPOSE 5432
