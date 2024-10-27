@@ -25,11 +25,11 @@ public class UrlService {
     private final UrlRepository urlRepository;
     private final JedisHelper jedisHelper;
 
-    public UrlResponse createUrl(UrlRequest url) {
+    public UrlResponse createUrl(String originalUrl, UUID uuid) {
         var urlToPersist = new UrlEntity().builder()
-                .originalUrl(url.getOriginalUrl())
+                .originalUrl(originalUrl)
                 .shortUrl(UrlUtil.shortenUrl())
-                .id(url.getUuid())
+                .id(uuid)
                 .active(true)
                 .createdAt(LocalDateTime.now())
                 .build();
