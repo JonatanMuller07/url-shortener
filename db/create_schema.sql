@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS url (
+    "id" uuid NOT NULL,
+    original_url VARCHAR(255) NOT NULL,
+    short_url VARCHAR(50) NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    active BOOLEAN DEFAULT TRUE
+);
