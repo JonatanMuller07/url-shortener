@@ -29,7 +29,9 @@ public class RedisConfig {
     public RedissonClient redissonClient() {
         var config = new Config();
         config.useSingleServer()
-                .setAddress(serverAddress);
+                .setAddress(serverAddress)
+                .setConnectionPoolSize(10)
+                .setConnectionMinimumIdleSize(5); 
         return Redisson.create(config);
     }
 
